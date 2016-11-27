@@ -3,8 +3,10 @@ import requests
 import time
 import urllib
 
+import config
 
-TOKEN = "<your-bot-token>"
+
+TOKEN = config.token
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 
 
@@ -21,7 +23,6 @@ def get_json_from_url(url):
 
 
 def get_updates(offset=None):
-
     url = URL + "getUpdates"
     if offset:
         url += "?offset={}".format(offset)
@@ -69,7 +70,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-
